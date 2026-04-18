@@ -16,13 +16,7 @@
   body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
   h1, h2, h3, h4, .brand { font-family: 'Syne', sans-serif; }
 
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 6%; height: 68px;
-    background: rgba(10,10,15,0.85); backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-  }
+  nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 6%; height: 68px; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
   .brand { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.5px; }
   .brand span { color: var(--accent); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -50,17 +44,11 @@
   .stat-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--text); }
   .stat-label { font-size: 0.8rem; color: var(--muted); }
   .hero-visual { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); width: 380px; z-index: 1; }
-  .phone-mockup { width: 180px; height: 340px; background: var(--bg3); border-radius: 32px; border: 2px solid rgba(0,229,255,0.2); position: relative; margin: 0 auto; box-shadow: 0 0 60px rgba(0,229,255,0.08); }
+  .phone-mockup { width: 180px; height: 340px; background: var(--bg3); border-radius: 32px; border: 2px solid rgba(0,229,255,0.2); position: relative; margin: 0 auto; }
   .phone-mockup::before { content: ''; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 50px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; }
-  .phone-screen { position: absolute; top: 30px; left: 8px; right: 8px; bottom: 20px; background: linear-gradient(160deg, #1a1a2e 0%, #0f0f1a 100%); border-radius: 24px; overflow: hidden; }
-  .phone-screen-inner { padding: 12px; }
-  .ps-bar { height: 5px; background: rgba(0,229,255,0.3); border-radius: 4px; margin-bottom: 8px; }
-  .ps-bar.w60 { width: 60%; }
-  .ps-bar.w40 { width: 40%; background: rgba(124,58,237,0.4); }
-  .ps-img { height: 70px; background: rgba(255,255,255,0.04); border-radius: 10px; margin: 8px 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-  .ps-price { color: var(--accent); font-size: 10px; font-family: 'Syne',sans-serif; font-weight: 700; }
-  .ps-label { color: rgba(255,255,255,0.5); font-size: 8px; margin-bottom: 2px; }
-  .float-card { position: absolute; background: var(--bg3); border: 1px solid var(--border); border-radius: 14px; padding: 10px 14px; font-size: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  .phone-screen { position: absolute; top: 30px; left: 8px; right: 8px; bottom: 20px; border-radius: 24px; overflow: hidden; }
+  .phone-screen img { width: 100%; height: 100%; object-fit: cover; }
+  .float-card { position: absolute; background: var(--bg3); border: 1px solid var(--border); border-radius: 14px; padding: 10px 14px; font-size: 12px; }
   .float-card.top-right { top: 10px; right: 0; }
   .float-card.bottom-left { bottom: 40px; left: 0; }
   .fc-label { color: var(--muted); font-size: 10px; margin-bottom: 2px; }
@@ -105,8 +93,10 @@
   .badge-deal { background: rgba(0,229,255,0.15); color: var(--accent); border: 1px solid rgba(0,229,255,0.3); }
   .badge-new { background: rgba(124,58,237,0.2); color: #c4b5fd; border: 1px solid rgba(124,58,237,0.35); }
   .badge-hot { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
-  .product-img { height: 160px; display: flex; align-items: center; justify-content: center; background: var(--bg3); font-size: 3.5rem; position: relative; }
-  .product-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%); }
+  .product-img { height: 180px; background: var(--bg3); position: relative; overflow: hidden; }
+  .product-img img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.3s; }
+  .product-card:hover .product-img img { transform: scale(1.06); }
+  .product-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3) 100%); pointer-events: none; }
   .product-info { padding: 1.1rem; }
   .product-brand { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-bottom: 0.25rem; }
   .product-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.6rem; line-height: 1.3; }
@@ -156,12 +146,11 @@
   .social-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--muted); transition: all 0.2s; cursor: pointer; text-decoration: none; }
   .social-btn:hover { background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.3); color: var(--accent); }
 
-  /* WHATSAPP FAB */
   .wa-fab { position: fixed; bottom: 28px; right: 28px; display: flex; align-items: center; gap: 0; cursor: pointer; z-index: 999; text-decoration: none; }
-  .wa-label-bubble { background: #1a1a24; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); font-size: 13px; font-family: 'DM Sans', sans-serif; padding: 9px 16px; border-radius: 12px 0 0 12px; white-space: nowrap; opacity: 0; transition: opacity 0.25s, transform 0.25s; transform: translateX(10px); pointer-events: none; line-height: 1.4; }
+  .wa-label-bubble { background: #1a1a24; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); font-size: 13px; font-family: 'DM Sans', sans-serif; padding: 9px 16px; border-radius: 12px 0 0 12px; white-space: nowrap; opacity: 0; transition: opacity 0.25s, transform 0.25s; transform: translateX(10px); pointer-events: none; }
   .wa-fab:hover .wa-label-bubble { opacity: 1; transform: translateX(0); }
-  .wa-circle { width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; position: relative; }
-  .wa-fab:hover .wa-circle { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
+  .wa-circle { width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; flex-shrink: 0; position: relative; }
+  .wa-fab:hover .wa-circle { transform: scale(1.08); }
   .wa-ping { position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(37,211,102,0.45); animation: waping 2.2s ease-out infinite; }
   @keyframes waping { 0%{opacity:0.8;transform:scale(1)} 100%{opacity:0;transform:scale(1.65)} }
   .wa-icon { width: 30px; height: 30px; }
@@ -189,7 +178,7 @@
   <div class="hero-content">
     <div class="hero-badge">Zimbabwe's #1 Tech Store</div>
     <h1>The Latest Tech<span class="line2">Delivered to You</span></h1>
-    <p>Phones, tablets, and accessories — all the top brands, unbeatable prices, and fast delivery across Zimbabwe.</p>
+    <p>Phones, tablets, and accessories &mdash; all the top brands, unbeatable prices, and fast delivery across Zimbabwe.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">Explore Deals</button>
       <button class="btn-ghost" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Browse Categories</button>
@@ -201,42 +190,34 @@
     </div>
   </div>
   <div class="hero-visual">
-    <div class="float-card top-right"><div class="fc-label">New Arrival</div><div class="fc-val accent">iPhone 16 Pro</div></div>
+    <div class="float-card top-right"><div class="fc-label">New Arrival</div><div class="fc-val accent">Samsung S24 Ultra</div></div>
     <div class="phone-mockup">
       <div class="phone-screen">
-        <div class="phone-screen-inner">
-          <div class="ps-bar"></div>
-          <div class="ps-bar w60"></div>
-          <div class="ps-img">&#128241;</div>
-          <div class="ps-label">Samsung Galaxy S25</div>
-          <div class="ps-price">USD $749</div>
-          <div class="ps-img" style="height:50px;margin-top:10px;font-size:20px">&#127911;</div>
-          <div class="ps-bar w40" style="margin-top:6px"></div>
-        </div>
+        <img src="https://i.ibb.co/0j6KX3PV/Samsung-Galaxy-Note-20-Ultra-in-three-colours-02d441b.jpg" alt="Samsung Galaxy Note 20 Ultra" onerror="this.style.display='none';this.parentElement.style.background='#1a1a2e'">
       </div>
     </div>
-    <div class="float-card bottom-left"><div class="fc-label">Flash Sale</div><div class="fc-val green">30% OFF</div></div>
+    <div class="float-card bottom-left"><div class="fc-label">Flash Sale</div><div class="fc-val green">Save $15</div></div>
   </div>
 </section>
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot"></span>Apple iPhone 16 Series</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Samsung Galaxy S25</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Samsung Galaxy Note 20 Ultra</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Samsung S24 Ultra</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Fast Nationwide Delivery</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Airpods &amp; Earbuds</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>iPad &amp; Android Tablets</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Anker Soundcore R50i</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>C Idea Tablets</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Warranty on All Products</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Power Banks &amp; Chargers</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Smart Watches &amp; Bands</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Apple iPhone 16 Series</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Samsung Galaxy S25</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>King Kong 9 256GB</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Cipero B3 Kids Tablet &amp; More</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Samsung Galaxy Note 20 Ultra</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Samsung S24 Ultra</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Fast Nationwide Delivery</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Airpods &amp; Earbuds</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>iPad &amp; Android Tablets</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Anker Soundcore R50i</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>C Idea Tablets</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Warranty on All Products</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Power Banks &amp; Chargers</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Smart Watches &amp; Bands</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>King Kong 9 256GB</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Cipero B3 Kids Tablet &amp; More</span>
   </div>
 </div>
 
@@ -255,76 +236,173 @@
 
 <section id="deals">
   <div class="deals-header">
-    <div><div class="section-label">Hot right now</div><div class="section-title">Featured Products</div></div>
+    <div><div class="section-label">Hot right now</div><div class="section-title">Our Products</div></div>
     <button class="view-all">View all products</button>
   </div>
   <div class="products-grid">
-    <div class="product-card">
-      <span class="product-badge badge-new">New</span>
-      <div class="product-img">&#128241;</div>
-      <div class="product-info">
-        <div class="product-brand">Apple</div>
-        <div class="product-name">iPhone 16 Pro Max</div>
-        <div class="product-pricing"><span class="product-price">$1,199</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.9 <span style="color:var(--muted);font-size:.75rem">(218)</span></span><button class="add-btn">+</button></div>
-      </div>
-    </div>
+
     <div class="product-card">
       <span class="product-badge badge-deal">Sale</span>
-      <div class="product-img">&#128241;</div>
+      <div class="product-img">
+        <img src="https://i.ibb.co/0j6KX3PV/Samsung-Galaxy-Note-20-Ultra-in-three-colours-02d441b.jpg" alt="Samsung Galaxy Note 20 Ultra" onerror="this.src='https://via.placeholder.com/300x200/1a1a24/00e5ff?text=Note+20+Ultra'">
+      </div>
       <div class="product-info">
         <div class="product-brand">Samsung</div>
-        <div class="product-name">Galaxy S25 Ultra</div>
-        <div class="product-pricing"><span class="product-price">$899</span><span class="product-old">$1,099</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.8 <span style="color:var(--muted);font-size:.75rem">(305)</span></span><button class="add-btn">+</button></div>
+        <div class="product-name">Galaxy Note 20 Ultra</div>
+        <div class="product-pricing"><span class="product-price">$250</span><span class="product-old">$265</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.8</span><button class="add-btn">+</button></div>
       </div>
     </div>
+
     <div class="product-card">
       <span class="product-badge badge-hot">Hot</span>
-      <div class="product-img">&#128242;</div>
+      <div class="product-img">
+        <img src="https://i.ibb.co/MDM3BF8V/71-Wcjs-OVOm-L-AC-SX679.jpg" alt="Samsung S24 Ultra" onerror="this.src='https://via.placeholder.com/300x200/1a1a24/00e5ff?text=S24+Ultra'">
+      </div>
       <div class="product-info">
-        <div class="product-brand">Apple</div>
-        <div class="product-name">iPad Pro 13" M4</div>
-        <div class="product-pricing"><span class="product-price">$1,099</span><span class="product-old">$1,299</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.9 <span style="color:var(--muted);font-size:.75rem">(142)</span></span><button class="add-btn">+</button></div>
+        <div class="product-brand">Samsung</div>
+        <div class="product-name">Samsung S24 Ultra</div>
+        <div class="product-pricing"><span class="product-price">$520</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.9</span><button class="add-btn">+</button></div>
       </div>
     </div>
+
     <div class="product-card">
       <span class="product-badge badge-deal">Sale</span>
-      <div class="product-img">&#127911;</div>
+      <div class="product-img">
+        <img src="https://i.ibb.co/bgpL6m5j/bc898a3383cb26fdaa43b5961b65c503.jpg" alt="King Kong 9" onerror="this.src='https://via.placeholder.com/300x200/1a1a24/00e5ff?text=King+Kong+9'">
+      </div>
       <div class="product-info">
-        <div class="product-brand">Apple</div>
-        <div class="product-name">AirPods Pro 2nd Gen</div>
-        <div class="product-pricing"><span class="product-price">$199</span><span class="product-old">$249</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.8 <span style="color:var(--muted);font-size:.75rem">(891)</span></span><button class="add-btn">+</button></div>
+        <div class="product-brand">Cubot</div>
+        <div class="product-name">King Kong 9 256GB</div>
+        <div class="product-pricing"><span class="product-price">$230</span><span class="product-old">$240</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.6</span><button class="add-btn">+</button></div>
       </div>
     </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-deal">Sale</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/qFNGHX6d/4713181745.jpg" alt="Anker Soundcore R50i" onerror="this.src='https://via.placeholder.com/300x200/1a1a24/00e5ff?text=Soundcore+R50i'">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Anker</div>
+        <div class="product-name">Soundcore R50i Earbuds</div>
+        <div class="product-pricing"><span class="product-price">$20</span><span class="product-old">$25</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.7</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-deal">Sale</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/hJ7tH8fJ/cm816.webp" alt="C Idea 816" onerror="this.style.opacity='0.5'">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">C Idea</div>
+        <div class="product-name">C Idea 816 Tablet</div>
+        <div class="product-pricing"><span class="product-price">$65</span><span class="product-old">$70</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.5</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
     <div class="product-card">
       <span class="product-badge badge-new">New</span>
-      <div class="product-img">&#8987;</div>
+      <div class="product-img">
+        <img src="https://i.ibb.co/W4X1nWqw/cm8700.webp" alt="C Idea 10 inch">
+      </div>
       <div class="product-info">
-        <div class="product-brand">Apple</div>
-        <div class="product-name">Apple Watch Series 10</div>
-        <div class="product-pricing"><span class="product-price">$399</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.7 <span style="color:var(--muted);font-size:.75rem">(210)</span></span><button class="add-btn">+</button></div>
+        <div class="product-brand">C Idea</div>
+        <div class="product-name">C Idea 10 Inch Tablet</div>
+        <div class="product-pricing"><span class="product-price">$100</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.5</span><button class="add-btn">+</button></div>
       </div>
     </div>
+
     <div class="product-card">
       <span class="product-badge badge-deal">Sale</span>
-      <div class="product-img">&#128241;</div>
+      <div class="product-img">
+        <img src="https://i.ibb.co/kVj5phzh/607968847-122156771810410736-4905614368078358530-n.jpg" alt="Discover Fire 14">
+      </div>
       <div class="product-info">
-        <div class="product-brand">Xiaomi</div>
-        <div class="product-name">Xiaomi 15 Ultra</div>
-        <div class="product-pricing"><span class="product-price">$699</span><span class="product-old">$849</span></div>
-        <div class="product-footer"><span class="rating">&#9733; 4.6 <span style="color:var(--muted);font-size:.75rem">(178)</span></span><button class="add-btn">+</button></div>
+        <div class="product-brand">Discover</div>
+        <div class="product-name">Discover Fire 14</div>
+        <div class="product-pricing"><span class="product-price">$60</span><span class="product-old">$65</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.4</span><button class="add-btn">+</button></div>
       </div>
     </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-deal">Sale</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/G4pw4yGV/559680773-122127896066974168-1259491660648094403-n.jpg" alt="Discover Fire 9">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Discover</div>
+        <div class="product-name">Discover Fire 9</div>
+        <div class="product-pricing"><span class="product-price">$55</span><span class="product-old">$60</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.4</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-deal">Sale</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/20mmGBmT/621738305-122159379842944885-4618628325671455154-n.jpg" alt="Cipero B3 Kids Tablet">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">B3</div>
+        <div class="product-name">Cipero B3 Kids Tablet</div>
+        <div class="product-pricing"><span class="product-price">$55</span><span class="product-old">$60</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.6</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-new">New</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/v6hnsfTB/Tablet-Modio-M65.webp" alt="Modio M65">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Modio</div>
+        <div class="product-name">Modio M65 WiFi Only</div>
+        <div class="product-pricing"><span class="product-price">$50</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.5</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-new">New</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/W4h810B0/cm826.webp" alt="CM828">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">CM</div>
+        <div class="product-name">CM828 Tablet</div>
+        <div class="product-pricing"><span class="product-price">$70</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.5</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <span class="product-badge badge-new">New</span>
+      <div class="product-img">
+        <img src="https://i.ibb.co/F4bBYT0g/cm824.webp" alt="C Idea 824 Ultra">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">C Idea</div>
+        <div class="product-name">C Idea 824 Ultra</div>
+        <div class="product-pricing"><span class="product-price">$70</span></div>
+        <div class="product-footer"><span class="rating">&#9733; 4.5</span><button class="add-btn">+</button></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <div class="deals-banner">
   <div class="banner-text">
-    <h2>Flash Sale &mdash; Up to 40% Off</h2>
+    <h2>Flash Sale &mdash; Up to 20% Off</h2>
     <p>Limited time deals on selected phones and accessories. Don't miss out!</p>
   </div>
   <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem;position:relative;z-index:1;">
@@ -344,9 +422,9 @@
     <div class="section-sub" style="margin:0 auto">We stock only genuine products from the world's leading tech brands.</div>
   </div>
   <div class="brands-row">
-    <div class="brand-pill">Apple</div><div class="brand-pill">Samsung</div><div class="brand-pill">Xiaomi</div>
-    <div class="brand-pill">TECNO</div><div class="brand-pill">Infinix</div><div class="brand-pill">Huawei</div>
-    <div class="brand-pill">OnePlus</div><div class="brand-pill">Google</div><div class="brand-pill">Oppo</div><div class="brand-pill">Nokia</div>
+    <div class="brand-pill">Samsung</div><div class="brand-pill">Anker</div><div class="brand-pill">C Idea</div>
+    <div class="brand-pill">Cubot</div><div class="brand-pill">Discover</div><div class="brand-pill">Modio</div>
+    <div class="brand-pill">B3</div><div class="brand-pill">CM</div><div class="brand-pill">Apple</div><div class="brand-pill">Xiaomi</div>
   </div>
 </section>
 
@@ -357,22 +435,22 @@
   <div class="reviews-grid">
     <div class="review-card">
       <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="review-text">"Got my iPhone 16 next day delivery to Harare. Packaging was perfect and the price was the best I found anywhere. Will definitely shop here again!"</div>
+      <div class="review-text">"Got my Samsung Note 20 Ultra delivered next day to Harare. Packaging was perfect and the price was the best I found anywhere. Will definitely shop here again!"</div>
       <div class="reviewer"><div class="reviewer-avatar">TM</div><div><div class="reviewer-name">Tatenda M.</div><div class="reviewer-loc">Harare</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="review-text">"Ordered Samsung earbuds as a gift. Fast shipping to Bulawayo and they even included a nice gift bag. Super impressed with the service!"</div>
+      <div class="review-text">"Ordered the Anker Soundcore earbuds as a gift. Fast shipping to Bulawayo and they even included a nice gift bag. Super impressed with the service!"</div>
       <div class="reviewer"><div class="reviewer-avatar">SN</div><div><div class="reviewer-name">Simbai N.</div><div class="reviewer-loc">Bulawayo</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="review-text">"Best online tech shop in Zim. Prices are fair, products are 100% genuine. Bought a tablet and power bank — both working perfectly after 3 months."</div>
+      <div class="review-text">"Best online tech shop in Zim. Prices are fair, products are 100% genuine. Bought a C Idea tablet and it works perfectly after 3 months."</div>
       <div class="reviewer"><div class="reviewer-avatar">RK</div><div><div class="reviewer-name">Rudo K.</div><div class="reviewer-loc">Mutare</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-      <div class="review-text">"Very good selection of accessories. Found the exact phone case I needed for my Xiaomi. Customer support was very helpful via WhatsApp."</div>
+      <div class="review-text">"Very good selection of tablets. Found the exact model I needed. Customer support was very helpful via WhatsApp."</div>
       <div class="reviewer"><div class="reviewer-avatar">FM</div><div><div class="reviewer-name">Farai M.</div><div class="reviewer-loc">Gweru</div></div></div>
     </div>
   </div>
@@ -413,14 +491,11 @@
   </div>
 </footer>
 
-<!-- WHATSAPP FLOATING BUTTON -->
 <a class="wa-fab" href="https://wa.me/263785955027?text=Hi%20Mobile_ZW%2C%20I%27d%20like%20to%20enquire%20about%20a%20product." target="_blank" rel="noopener">
   <div class="wa-label-bubble">Chat with us on WhatsApp</div>
   <div class="wa-circle">
     <div class="wa-ping"></div>
-    <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <div class="wa-notif">1</div>
   </div>
 </a>
